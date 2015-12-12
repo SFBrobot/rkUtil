@@ -25,9 +25,6 @@ float fminf(float a, float b) { return a < b ? a : b; }
 //Waits the specified number of milliseconds without allowing other tasks to run
 void hog1Msec(int nMSec) { long ts = nSysTime; while (nSysTime - ts < nMSec);  }
 
-//Clears both lines of the LCD
-#define clearLCD() clearLCDLine(0); clearLCDLine(1)
-
 //Joystick analog channels
 #define ChLX Ch4
 #define ChLY Ch3
