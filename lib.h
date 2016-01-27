@@ -1,6 +1,10 @@
 #ifndef RKUTIL
 #define RKUTIL
 
+#ifndef fabs
+#define fabs abs
+#endif
+
 float fmaxf(float a, float b) { return a > b ? a : b; }
 
 float fminf(float a, float b) { return a < b ? a : b; }
