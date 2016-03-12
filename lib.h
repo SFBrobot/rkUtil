@@ -27,7 +27,7 @@ float fminf(float a, float b) { return a < b ? a : b; }
 #define blockLim(lim, cond) whileLim(lim, cond) EndTimeSlice()
 
 //Waits the specified number of milliseconds without allowing other tasks to run
-void hog1Msec(int nMSec) { long ts = nSysTime; while (nSysTime - ts < nMSec);  }
+void hog1Msec(int nMSec) { long ts = nSysTime; while (nSysTime - ts < nMSec); }
 
 //Joystick analog channels
 #define ChLX Ch4
@@ -96,8 +96,8 @@ void hog1Msec(int nMSec) { long ts = nSysTime; while (nSysTime - ts < nMSec);  }
 //	ml: the left motor
 //	mr: the right motor
 #define arcade2(x, y, ml, mr)\
-	motor[ml] = arcadeLeft(x, y);\
-	motor[mr] = arcadeRight(x, y)
+  motor[ml] = arcadeLeft(x, y);\
+  motor[mr] = arcadeRight(x, y)
 
 //Four-motor arcade drive
 //	x: the rotation speed
@@ -107,8 +107,8 @@ void hog1Msec(int nMSec) { long ts = nSysTime; while (nSysTime - ts < nMSec);  }
 //	mr1: the first right motor
 //	mr2: the second right motor
 #define arcade4(x, y, ml1, ml2, mr1, mr2)\
-	motor[ml1] = motor[ml2] = arcadeLeft(x, y);\
-	motor[mr1] = motor[mr2] = arcadeRight(x, y)
+  motor[ml1] = motor[ml2] = arcadeLeft(x, y);\
+  motor[mr1] = motor[mr2] = arcadeRight(x, y)
 
 //Two-motor tank drive
 //	l: the left speed
@@ -139,10 +139,10 @@ void hog1Msec(int nMSec) { long ts = nSysTime; while (nSysTime - ts < nMSec);  }
 //	mfr: the front-right motor
 //	mbr: the back-right motor
 #define holonomic(x, y, r, mfl, mbl, mfr, mbr)\
-	motor[mfl] = holoFL(x, y, r);\
-	motor[mfr] = holoFR(x, y, r);\
-	motor[mbl] = holoBL(x, y, r);\
-	motor[mbr] = holoBR(x, y, r)
+  motor[mfl] = holoFL(x, y, r);\
+  motor[mfr] = holoFR(x, y, r);\
+  motor[mbl] = holoBL(x, y, r);\
+  motor[mbr] = holoBR(x, y, r)
 
 //If val is above thresh, returns val; otherwise zero.
 //	val: the input value
