@@ -49,22 +49,30 @@ void hog1Msec(int nMSec) { long ts = nSysTime; while (nSysTime - ts < nMSec); }
 //Arcade drive value for the left wheels
 //	x: the rotation speed
 //	y: the forward speed
-#define arcadeLeft(x, y) (y + x)
+//  doInvert: whether or not to invert forward (180 degree rotation)
+word arcadeLeft(word x, word y, bool doInvert) { return (doInvert ? -y : y) + x; }
+word arcadeLeft(word x, word y) { return arcadeLeft(x, y, false); }
 
-//Arcade drive value for the right wheels
+//Arcade drive value for the left wheels
 //	x: the rotation speed
 //	y: the forward speed
-#define arcadeRight(x, y) (y - x)
+//  doInvert: whether or not to invert forward (180 degree rotation)
+word arcadeRight(word x, word y, bool doInvert) { return (doInvert ? -y : y) - x; }
+word arcadeRight(word x, word y) { return arcadeRight(x, y, false); }
 
 //Tank drive value for the left wheels
 //	l: the left speed
 //	r: the right speed
-#define tankLeft(l, r) l
+//  doInvert: whether or not to invert forward (180 degree rotation)
+word tankLeft(word l, word r, bool doInvert) { return doInvert ? -r : l; }
+word tankLeft(word l, word r) { return tankLeft(l, r, false); }
 
-//Tank drive value for the right wheels
+//Tank drive value for the left wheels
 //	l: the left speed
 //	r: the right speed
-#define tankRight(l, r) r
+//  doInvert: whether or not to invert forward (180 degree rotation)
+word tankRight(word l, word r, bool doInvert) { return doInvert ? -l : r; }
+word tankRight(word l, word r) { return tankRight(l, r, false); }
 
 //Holonomic drive value for the front left wheel
 //	x: the strafe speed
