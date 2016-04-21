@@ -7,7 +7,7 @@ typedef union {
 } RawFloatConverter;
 
 int convertFloat(float val) {
-  RawFloatConverter converter;
+  RawFloatConverter conv;
   conv.floatVal = val;
   return conv.intVal;
 }
